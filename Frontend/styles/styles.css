@@ -1,0 +1,16 @@
+body {
+  margin: 0 auto;
+  font-family: "Tangerine bold", sans-serif;
+  background-color: dimgrey;
+  color: white;
+
+}
+.form-container {
+  margin: 15% auto;
+  display: block;
+  width: 500px;
+  text-align: center;
+}
+.form-container input {
+  margin-bottom: 10px;
+}
