@@ -5,12 +5,13 @@ if (isset($_SESSION) && $_SESSION['loggedin']){
     $response = []; 
     $response['success'] = 'success';
     echo json_encode($response);
+    echo json_encode($_SESSION);
     return;
 }
 
-if(isset($_GET['username']) && isset($_GET['password'])){
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 }
 
 else{
@@ -30,7 +31,7 @@ if(password_verify($password , $user['password'])){
     $response['success'] = "success";
     session_start();
     $_SESSION["loggedin"] = true;
-    $_SESSION["id"] = $user['id'];
+    $_SESSION["id"] = $user['user_id'];
     $_SESSION["username"] = $username;
     echo json_encode($_SESSION);
 }
