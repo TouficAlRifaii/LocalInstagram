@@ -9,7 +9,52 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 10%;
+    padding: 2rem 10% 1rem 10%;
     border-bottom: 0.5rem solid rgba(219, 219, 219, 1);
     background-color: white;
+}
+
+header .logo{
+    height: 5rem;
+    
+    
+}
+header .logo h1{
+    height: 100%;
+    font-family: "Tangerine", sans-serif;
+    font-size: 4rem;
+}
+header .search{
+    width: 15rem;
+    background-color: rgba(239, 239, 239, 1);
+    padding: 0.2rem 1rem;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+header .search input{
+    height: 2rem;
+    border: none;
+    outline: none;
+    background-color: rgba(239, 239, 239, 1);
+    padding-left: 0.62rem;
+    font-size: 0.85rem;
+    color: #8e8e8e;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+}
+header nav ul li {
+    margin-right: 1.3rem;
+}
+header nav ul li a i{
+   font-size: 2rem;
+   color: rgba(38, 38, 38, 1);
+}
+header nav ul li a img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
 }
