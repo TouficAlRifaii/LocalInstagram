@@ -17,13 +17,16 @@ else{
 
 $search_query = $mysqli->prepare("Select * from users where username = ?");
 $search_query->bind_param("s" , $username);
-if(mysqli_num_rows($search_query) > 0){
+$search_query->execute();
+$array = $search_query ->get_result();
+if(mysqli_num_rows($array) > 0){
     echo "Username Already exists";
     return;
 }
 else{
-        $query = mysqli-> prepare("INSERT INTO users(username, email, password, name) values(?,?,?,?");
-        $query-> bind_param("ssss", $username, $email,$password,$name);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $query = $mysqli-> prepare("INSERT INTO users(username, email, name, password) values(?,?,?,?)");
+        $query-> bind_param("ssss", $username, $email,$name,$hashedPassword);
         $query->execute();
         $response = [];
         $response['success'] = "success";
