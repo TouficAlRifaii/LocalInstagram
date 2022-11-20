@@ -1,4 +1,8 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST");
+header("Access-Control-Allow-Header: X-Requested-With");
+
 include("db_connection.php");
 
 if(isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['email']) && $_POST['email'] != ""
