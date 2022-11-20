@@ -22,21 +22,11 @@ if(mysqli_num_rows($search_query) > 0){
     return;
 }
 else{
-    if(!empty($_FILES['pfp']['name'])){
-        $fileName = basename($_FILES['pfp']['name']);
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-
-        $allowTypes = array("jpg" , "png" , "jpeg");
-        if(in_array($fileType, $allowTypes)){
-            $image = $_FILES['pfp']['tmp_name'];
-            $imageContent = addslashes(file_get_contents($image));
-        }
-        $query = mysqli-> prepare("INSERT INTO users(username, email, password, name, proile_picture) values(?,?,?,?,'" .$imageContent."' ");
+        $query = mysqli-> prepare("INSERT INTO users(username, email, password, name) values(?,?,?,?");
         $query-> bind_param("ssss", $username, $email,$password,$name);
         $query->execute();
-        $array = $query-> get_result();
         $response = [];
         $response['success'] = "success";
         echo json_encode($response);
     }
-}
+ 
