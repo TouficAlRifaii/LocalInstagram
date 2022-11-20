@@ -23,9 +23,18 @@ if (isset($_POST['description']) && isset($_POST['user_id']) && !empty($_FILES["
  
     //  move the uploaded image into the folder: image
     if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3>  Image uploaded successfully!</h3>";
+        
     } else {
-        echo "<h3>  Failed to upload image!</h3>";
+        $response = []; 
+        $response['success'] = false;
+        echo json_encode($response);
+        
     }
+}
+else{
+    $response = [] ;
+    $response["success"] = false; 
+    echo json_encode($response);
+    return;
 }
 ?>
