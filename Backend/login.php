@@ -4,7 +4,7 @@ include("db_connection.php");
 if (isset($_SESSION) && $_SESSION['loggedin']){
     $response = []; 
     $response['success'] = 'success';
-    echo json_encode($response);
+    
     echo json_encode($_SESSION);
     return;
 }
@@ -28,7 +28,6 @@ $array= $query->get_result();
 $user = $array->fetch_assoc();
 $response = [];
 if(password_verify($password , $user['password'])){
-    $response['success'] = "success";
     session_start();
     $_SESSION["loggedin"] = true;
     $_SESSION["id"] = $user['user_id'];
