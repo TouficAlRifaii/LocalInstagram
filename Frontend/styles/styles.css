@@ -1,19 +1,15 @@
-body {
-  margin: 0 auto;
-  font-family: "Tangerine", sans-serif;
-  font-size: 50px;
-  background-color: #121212;
-  color: white;
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-.form-container {
-  margin: 15% auto;
-  display: block;
-  width: 500px;
-  text-align: center;
-}
-
-.form-container input {
-  margin-bottom: 10px;
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    border-bottom: 0.5rem solid rgba(219, 219, 219, 1);
+    background-color: white;
 }
