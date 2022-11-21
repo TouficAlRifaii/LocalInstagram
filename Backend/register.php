@@ -14,6 +14,7 @@ if(isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['email'
 }
 else{
     $response = [];
+    $response['exist'] = false;
     $repsonse['success'] = false;
     echo json_encode($response);
     return;
@@ -24,7 +25,10 @@ $search_query->bind_param("s" , $username);
 $search_query->execute();
 $array = $search_query ->get_result();
 if(mysqli_num_rows($array) > 0){
-    echo "Username Already exists";
+    $response = [];
+    $response['exist'] = true;
+    $response['success'] = true;
+    echo json_encode($response);
     return;
 }
 else{
@@ -33,7 +37,8 @@ else{
         $query-> bind_param("ssss", $username, $email,$name,$hashedPassword);
         $query->execute();
         $response = [];
-        $response['success'] = "success";
+        $response['success'] = true;
+        $repsonse['exist'] = false; 
         echo json_encode($response);
     }
  
