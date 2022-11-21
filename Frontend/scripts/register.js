@@ -5,7 +5,7 @@ window.onload = ()=>{
     const passwordField = document.getElementById("password");
     const button = document.getElementById("signupButton");
 
-    button.addEventListener("click" , async (e)=>{
+    button.addEventListener("click" , (e)=>{
         e.preventDefault();
 
         const username = usernameField.value;
