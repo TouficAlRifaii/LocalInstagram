@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="scripts/login.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,7 +16,7 @@
     <div class="container">
         <div class="box">
             <div class="heading"></div>
-            <form class="login-form">
+            <form id="login" class="login-form">
                 <div class="field">
                     <input id="username" type="name" placeholder="Username" />
                     <label for="username">Username</label>
@@ -23,7 +25,7 @@
                     <input id="password" type="password" placeholder="password" />
                     <label for="password">Password</label>
                 </div>
-                <button class="login-button" title="login">Log In</button>
+                <button id="login-button" class="login-button" title="login">Log In</button>
 
             </form>
         </div>
