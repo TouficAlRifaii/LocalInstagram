@@ -5,13 +5,6 @@ header("Access-Control-Allow-Headers: * ");
 
 session_start();
 include("db_connection.php");
-if (isset($_SESSION) && $_SESSION['loggedin']){
-    $response = []; 
-    $response['success'] = 'success';
-    
-    echo json_encode($_SESSION);
-    return;
-}
 
 if(isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
@@ -32,14 +25,14 @@ $array= $query->get_result();
 $user = $array->fetch_assoc();
 $response = [];
 if(password_verify($password , $user['password'])){
-    $_SESSION["loggedin"] = true;
-    $_SESSION["id"] = $user['user_id'];
-    $_SESSION["username"] = $username;
     $response= [];
+    $response["loggedin"] = true;
+    $response["id"] = $user['user_id'];
+    $response["username"] = $username;
     $response["success"] = true;
     echo json_encode($response);
-    // echo json_encode($_SESSION);
 }
 else{
     $response['success'] = false; 
+    echo json_encode($response);
 }
