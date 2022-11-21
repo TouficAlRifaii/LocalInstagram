@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST");
-header("Access-Control-Allow-Header: X-Requested-With");
+header("Access-Control-Allow-Headers: * ");
 
 session_start();
 include("db_connection.php");
@@ -32,14 +32,14 @@ $array= $query->get_result();
 $user = $array->fetch_assoc();
 $response = [];
 if(password_verify($password , $user['password'])){
-    session_start();
     $_SESSION["loggedin"] = true;
     $_SESSION["id"] = $user['user_id'];
     $_SESSION["username"] = $username;
-    echo json_encode($_SESSION);
+    $response= [];
+    $response["success"] = true;
+    echo json_encode($response);
+    // echo json_encode($_SESSION);
 }
 else{
     $response['success'] = false; 
 }
-
-echo json_encode($response);
