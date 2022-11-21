@@ -56,3 +56,6 @@ header nav ul li a img{
     border-radius: 50%;
     object-fit: cover;
 }
+.fa-house{
+    color: grey
+}
