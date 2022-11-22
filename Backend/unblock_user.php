@@ -20,7 +20,7 @@ $getBlocked  -> bind_param('s' , $blocked);
 $getBlocked -> execute(); 
 $array = $getBlocked -> get_result();
 $blocked_id = $array-> fetch_assoc();
-$query = $mysqli -> prepare("INSERT INTO blocks(user_id1 , user_id2) values(? , ?)");
+$query = $mysqli -> prepare("DELETE FROM blocks WHERE user_id1 = ? AND user_id2 = ?");
 $query -> bind_param("ii" , $blocker , $blocked_id['user_id']);
 $query-> execute();
 $response = []; 
