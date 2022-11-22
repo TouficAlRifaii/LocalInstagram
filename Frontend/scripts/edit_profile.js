@@ -5,7 +5,7 @@ window.onload = ()=>{
     const emailField = document.getElementById("email");
     const nameField = document.getElementById("name");
     const button = document.getElementById("submit-button");
-
+    const logout = document.getElementById("logout");
     button.addEventListener("click", (e)=>{
         e.preventDefault();
 
@@ -23,6 +23,14 @@ window.onload = ()=>{
             console.log(err);
         });
     
+    });
+    logout.addEventListener("click" , (e)=>{
+        e.preventDefault();
+        sessions['loggedin'] = false; 
+        sessions['id'] = null;
+        sessions['username']=  null;
+        storage.setItem("session", JSON.stringify(sessions));
+        location.replace("login.html");
     })
 
 
