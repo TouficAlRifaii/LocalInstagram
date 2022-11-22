@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="styles/edit_profile.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <title>Instagram</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <!-- <script src="scripts/edit_profile.js"></script> -->
+    <title>Blocked Users</title>
 </head>
 
 <body>
@@ -18,16 +20,11 @@
             <div class="logo">
                 <h1>Instagram</h1>
             </div>
-            <div class="search">
-                <i class="fa-solid fa-search"></i>
-                <input type="search" placeholder="Search">
-            </div>
             <nav>
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
                     <li><a href="new_post.html"><i class="fa-regular fa-square-plus"></i></a></li>
-                    <li><a href="edit_profile.html"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <li><a href="block_list.html"> <i class="fa-solid fa-ban"></i></a>
+                    <li><a href="edit_profile.html"><i class="fa-solid fa-pen-to-square"></i></a>
                     <li><a href=""><img src="images/instaDefaultpfp.png" alt=""></a></li>
                     <li><a id="logout" href=""> <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </ul>
@@ -35,7 +32,6 @@
             </nav>
         </header>
     </div>
-
 </body>
 
 </html>
